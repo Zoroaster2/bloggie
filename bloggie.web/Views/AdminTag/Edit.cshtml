@@ -1,0 +1,63 @@
+﻿@model bloggie.web.Models.ViewModels.EditTagRequest
+@{
+}
+
+
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>
+            Show All The Tags - Admin Functionality
+        </h1>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container py-5">
+
+    @if (Model != null)
+    {
+        <form method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Id</label>
+                <input type="text" id="id" class="form-control" readonly asp-for="Id " />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" id="Name" class="form-control" asp-for="Name" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Display Name</label>
+                <input type="text" id="DisplayName" class="form-control" asp-for="DisplayName" />
+            </div>
+
+            <div class="mb-3">
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-dark">Update</button>
+                    <button type="submit" class="btn btn-danger ms-2" asp-area="" asp-controller="AdminTag" asp-action="delete">delete</button>
+
+                </div>
+
+
+            </div>
+
+        </form>
+    }
+    else
+    {
+        <p>No Tag Found!</p>
+    }
+
+
+
+</div>
+
+
